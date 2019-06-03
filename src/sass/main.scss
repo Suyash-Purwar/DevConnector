@@ -1,8 +1,10 @@
 @import "config";
+@import "utilities";
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -31,4 +33,29 @@ ul {
 
 img {
     width: 100%;
+}
+
+// NAVBAR
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid $primary-color;
+    opacity: 0.9;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: #fff;
+        padding: 0.5rem;
+        margin: 0 1rem;
+    }
 }
