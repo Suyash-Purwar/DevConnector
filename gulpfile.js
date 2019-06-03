@@ -4,10 +4,10 @@ const autoprefixer = require("gulp-autoprefixer");
 const sass = require("gulp-sass");
 
 const html = () => gulp.src("src/*.html")
-    .pipe(gulp.dist("dist"))
+    .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream());
 
-const styles = () => gulp.src("src/sass/*.css")
+const style = () => gulp.src("src/sass/*.scss")
     .pipe(sass({
         outputStyle: "compressed"
     }).on('error', sass.logError))
@@ -15,8 +15,8 @@ const styles = () => gulp.src("src/sass/*.css")
         browsers: ['last 5 versions'],
         cascade: false
     }))
-    .pipe(gulp.dist("dist/css"));
-
+    .pipe(gulp.dest("dist/css"))
+    .pipe(browserSync.stream()); 
 
 const watch = () => {
     browserSync.init({
@@ -24,12 +24,11 @@ const watch = () => {
             baseDir: './dist'
         }
     });
-    
-    gulp.watch("src/sass/*.sass", styles)
+
+    gulp.watch("src/sass/**/*.scss", style)
     gulp.watch("src/*.html", html);
 }
 
 exports.html = html;
 exports.style = style;
-
 exports.watch = watch;
