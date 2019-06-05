@@ -101,3 +101,30 @@ img {
     line-height: 1.8;
     margin-bottom: 1.3rem;
 }
+
+// Profile
+.profile-grid {
+    display: grid;
+    grid-template-areas: "top top" "about about" "exp edu" "github github";
+    grid-gap: 1.4rem;
+}
+
+.profile-top {
+    grid-area: top;
+}
+
+.profile-about {
+    grid-area: about;
+}
+
+.profile-exp {
+    grid-area: exp;
+}
+
+.profile-edu {
+    grid-area: edu;
+}
+
+.profile-github {
+    grid-area: github;
+}
