@@ -3,9 +3,14 @@
     max-width: $max-width;
     padding: 0 2.5rem;
     margin: auto;
-    margin-top: 6.5rem;
+    margin-top: 7rem;
     margin-bottom: 3rem;
     overflow: hidden;
+}
+
+.text-primary {
+    color: $primary-color;
+    line-height: 2;
 }
 
 // TEXT
