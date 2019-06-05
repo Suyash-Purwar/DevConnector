@@ -111,10 +111,32 @@ img {
 
 .profile-top {
     grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    img {
+        width: 25rem;
+    }
+
+    .icons a {
+        color: #fff;
+        margin: 0 0.8rem;
+    }
 }
 
 .profile-about {
     grid-area: about;
+    text-align: center;
+
+    .skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .profile-exp {
@@ -125,6 +147,33 @@ img {
     grid-area: edu;
 }
 
+.profile-exp,
+.profile-edu {
+    & > div:not(:last-child) {
+        margin-bottom: 1.6rem;
+        padding-bottom: 1.6rem;
+        border-bottom: #ccc dotted 1px
+    }
+
+    p {
+        margin: 0.8rem 0;
+    }
+}
+
 .profile-github {
     grid-area: github;
+
+    .repo {
+        display: flex;
+
+        & > div:first-child {
+            flex: 7;
+            flex-basis: 70%;
+        }
+
+        & > div:last-child {
+            flex: 3;
+            flex-basis: 20%;
+        }
+    }
 }
